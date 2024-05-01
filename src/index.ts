@@ -49,3 +49,52 @@ class User {
 const zeca = new User('Zeca', 'Admin', true);
 
 console.log(zeca);
+
+//interface em classes
+interface Ivehicle {
+    brand: string;
+    showBrand(): void
+}
+
+class Car implements Ivehicle {
+    brand
+    wheels
+
+    constructor(brand: string, wheels: number) {
+        this.brand = brand
+        this.wheels = wheels
+    }
+
+    showBrand(): void {
+        console.log(`A marca do carro é: ${this.brand}`);
+    }
+}
+
+const fusca = new Car('VW', 4);
+
+fusca.showBrand();
+
+
+// herança
+
+class SuperCar extends Car {
+    engine;
+
+    constructor(brand: string, wheels: number, engine: number) {
+        super(brand, wheels);
+        this.engine = engine;
+
+    }
+}
+
+const a4 = new SuperCar('Audi', 4, 2.0);
+
+console.log(a4);
+
+a4.showBrand();
+
+// decorators
+
+
+
+
